@@ -1,0 +1,12 @@
+[Unit]
+Description=Statsd Service
+After=syslog.target network.target
+
+[Service]
+Type=simple
+Group=statsd
+User=statsd
+ExecStart=/usr/bin/node /usr/bin/statsd /etc/statsd/config.js
+
+[Install]
+WantedBy=multi-user.target
