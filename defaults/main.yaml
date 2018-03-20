@@ -1,0 +1,53 @@
+# Copyright 2015 Red Hat, Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+---
+# tasks/main.yaml
+statsd_task_manager:
+  - pre
+  - install
+  - config
+  - service
+
+# tasks/config.yaml
+statsd_user_name: statsd
+statsd_user_group: statsd
+statsd_user_home: /var/lib/statsd
+
+statsd_file_config_js_dest: /etc/statsd/config.js
+statsd_file_config_js_group: "{{ statsd_user_group }}"
+statsd_file_config_js_mode: 0755
+statsd_file_config_js_owner: "{{ statsd_user_name }}"
+statsd_file_config_js_src: etc/statsd/config.js
+
+statsd_git_dest: "{{ statsd_user_home }}/src/github.com/etsy/statsd"
+statsd_git_uri: https://github.com/etsy/statsd
+statsd_git_version: master
+# statsd_git_update
+
+statsd_install_method: git
+
+# tasks/service.yaml
+statsd_file_statsd_service_manage: true
+statsd_file_statsd_service_group: root
+statsd_file_statsd_service_owner: root
+
+statsd_file_statsd_service_config_manage: true
+statsd_file_statsd_service_config_group: root
+statsd_file_statsd_service_config_owner: root
+
+statsd_service_statsd_daemon_reload: true
+statsd_service_statsd_enabled: yes
+statsd_service_statsd_manage: true
+statsd_service_statsd_name: statsd
+statsd_service_statsd_state: started
