@@ -20,9 +20,8 @@
 - name: Ensure dependencies are installed.
   become: yes
   package:
-    name: "{{ item }}"
+    name: "{{ statsd_build_depends }}"
     state: installed
-  with_items: "{{ statsd_build_depends }}"
   when: statsd_install_method == 'git'
 
 - include: "install/{{ statsd_install_method }}.yaml"
