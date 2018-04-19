@@ -17,7 +17,7 @@ galaxy_info:
   description: Daemon for easy but powerful stats aggregation
   company: Red Hat, Inc.
   license: Apache
-  min_ansible_version: 2.3
+  min_ansible_version: 2.4
   platforms:
   - name: Fedora
     versions:
