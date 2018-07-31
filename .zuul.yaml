@@ -34,5 +34,6 @@
     gate:
       jobs:
         - ansible-role-statsd-fedora-latest
+        - ansible-role-statsd-ubuntu-bionic
         - ansible-role-statsd-ubuntu-xenial
         - tox-linters
