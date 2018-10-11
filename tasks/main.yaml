@@ -15,7 +15,7 @@
 - name: Include OS-specific variables.
   include_vars: "{{ ansible_os_family }}.yaml"
 
-- include: "{{ statsd_task }}.yaml"
+- include_tasks: "{{ statsd_task }}.yaml"
   with_items: "{{ statsd_task_manager }}"
   loop_control:
     loop_var: statsd_task

@@ -24,4 +24,4 @@
     state: installed
   when: statsd_install_method == 'git'
 
-- include: "install/{{ statsd_install_method }}.yaml"
+- include_tasks: "install/{{ statsd_install_method }}.yaml"

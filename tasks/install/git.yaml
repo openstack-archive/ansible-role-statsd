@@ -25,4 +25,4 @@
   set_fact:
     statsd_npm_name: "{{ statsd_git_dest }}"
 
-- include: npm.yaml
+- include_tasks: npm.yaml
