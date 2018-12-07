@@ -12,12 +12,12 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 ---
-- name: Define statsd_build_depends.
+- name: Define statsd_build_depends
   set_fact:
     statsd_build_depends: "{{ __statsd_build_depends | list }}"
   when: statsd_build_depends is not defined
 
-- name: Ensure dependencies are installed.
+- name: Ensure dependencies are installed
   become: yes
   package:
     name: "{{ statsd_build_depends }}"

@@ -12,37 +12,37 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 ---
-- name: Define statsd_file_statsd_service_dest.
+- name: Define statsd_file_statsd_service_dest
   set_fact:
     statsd_file_statsd_service_dest: "{{ __statsd_file_statsd_service_dest }}"
   when: statsd_file_statsd_service_dest is not defined
 
-- name: Define statsd_file_statsd_service_mode.
+- name: Define statsd_file_statsd_service_mode
   set_fact:
     statsd_file_statsd_service_mode: "{{ __statsd_file_statsd_service_mode }}"
   when: statsd_file_statsd_service_mode is not defined
 
-- name: Define statsd_file_statsd_service_src.
+- name: Define statsd_file_statsd_service_src
   set_fact:
     statsd_file_statsd_service_src: "{{ __statsd_file_statsd_service_src }}"
   when: statsd_file_statsd_service_src is not defined
 
-- name: Define statsd_file_statsd_service_config_dest.
+- name: Define statsd_file_statsd_service_config_dest
   set_fact:
     statsd_file_statsd_service_config_dest: "{{ __statsd_file_statsd_service_config_dest  }}"
   when: statsd_file_statsd_service_config_dest is not defined
 
-- name: Define statsd_file_statsd_service_config_mode.
+- name: Define statsd_file_statsd_service_config_mode
   set_fact:
     statsd_file_statsd_service_config_mode: "{{ __statsd_file_statsd_service_config_mode  }}"
   when: statsd_file_statsd_service_config_mode is not defined
 
-- name: Define statsd_file_statsd_service_config_src.
+- name: Define statsd_file_statsd_service_config_src
   set_fact:
     statsd_file_statsd_service_config_src: "{{ __statsd_file_statsd_service_config_src  }}"
   when: statsd_file_statsd_service_config_src is not defined
 
-- name: Install statsd service script into place.
+- name: Install statsd service script into place
   become: yes
   template:
     dest: "{{ statsd_file_statsd_service_dest }}"
@@ -53,7 +53,7 @@
   register: statsd_file_statsd_service
   when: statsd_file_statsd_service_manage
 
-- name: Create statsd service config directory.
+- name: Create statsd service config directory
   become: yes
   file:
     group: "{{ statsd_file_statsd_service_config_group }}"
@@ -62,7 +62,7 @@
     state: directory
   when: statsd_file_statsd_service_config_manage
 
-- name: Install statsd service config into place.
+- name: Install statsd service config into place
   become: yes
   template:
     dest: "{{ statsd_file_statsd_service_config_dest  }}"
@@ -73,7 +73,7 @@
   register: statsd_file_statsd_service_config
   when: statsd_file_statsd_service_config_manage
 
-- name: Enable statsd service.
+- name: Enable statsd service
   become: yes
   systemd:
     daemon_reload: "{{ statsd_service_statsd_daemon_reload }}"

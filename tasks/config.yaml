@@ -13,7 +13,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 ---
-- name: Create required directories.
+- name: Create required directories
   become: yes
   file:
     group: "{{ statsd_user_group }}"
@@ -24,7 +24,7 @@
     - /etc/statsd
     - /var/log/statsd
 
-- name: Install statsd configuration.
+- name: Install statsd configuration
   become: yes
   template:
     dest: "{{ statsd_file_config_js_dest }}"
