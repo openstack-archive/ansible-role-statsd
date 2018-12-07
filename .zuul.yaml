@@ -15,25 +15,17 @@
     parent: ansible-role-statsd
     nodeset: ubuntu-bionic
 
-- job:
-    name: ansible-role-statsd-ubuntu-xenial
-    parent: ansible-role-statsd
-    nodeset: ubuntu-xenial
-
 - project:
     templates:
       - windmill-jobs-fedora-latest
       - windmill-jobs-bionic
-      - windmill-jobs-xenial
     check:
       jobs:
         - ansible-role-statsd-fedora-latest
         - ansible-role-statsd-ubuntu-bionic
-        - ansible-role-statsd-ubuntu-xenial
         - tox-linters
     gate:
       jobs:
         - ansible-role-statsd-fedora-latest
         - ansible-role-statsd-ubuntu-bionic
-        - ansible-role-statsd-ubuntu-xenial
         - tox-linters
