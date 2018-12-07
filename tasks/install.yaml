@@ -17,11 +17,11 @@
     statsd_build_depends: "{{ __statsd_build_depends | list }}"
   when: statsd_build_depends is not defined
 
-- name: Ensure dependencies are installed
+- name: Ensure dependencies are present
   become: yes
   package:
     name: "{{ statsd_build_depends }}"
-    state: installed
+    state: present
   when: statsd_install_method == 'git'
 
 - include: "install/{{ statsd_install_method }}.yaml"
