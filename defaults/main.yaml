@@ -37,6 +37,8 @@ statsd_git_version: master
 
 statsd_install_method: git
 
+statsd_npm_name: statsd
+
 # tasks/service.yaml
 statsd_file_statsd_service_manage: true
 statsd_file_statsd_service_group: root
