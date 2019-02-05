@@ -30,6 +30,6 @@
     dest: "{{ statsd_file_config_js_dest }}"
     group: "{{ statsd_file_config_js_group }}"
     mode: "{{ statsd_file_config_js_mode }}"
-    owner: "{{statsd_file_config_js_owner }}"
+    owner: "{{ statsd_file_config_js_owner }}"
     src: "{{ statsd_file_config_js_src }}"
   register: statsd_file_config_js
