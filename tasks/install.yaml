@@ -22,6 +22,6 @@
   package:
     name: "{{ statsd_build_depends }}"
     state: present
-  when: statsd_install_method == 'git' or statsd_install_method == 'pip'
+  when: statsd_install_method == 'git' or statsd_install_method == 'npm'
 
 - include: "install/{{ statsd_install_method }}.yaml"
