@@ -26,7 +26,7 @@ statsd_user_home: /var/lib/statsd
 
 statsd_file_config_js_dest: /etc/statsd/config.js
 statsd_file_config_js_group: "{{ statsd_user_group }}"
-statsd_file_config_js_mode: 0755
+statsd_file_config_js_mode: 0640
 statsd_file_config_js_owner: "{{ statsd_user_name }}"
 statsd_file_config_js_src: etc/statsd/config.js
 
