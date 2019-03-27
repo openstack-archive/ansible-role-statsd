@@ -35,7 +35,7 @@ statsd_git_uri: https://github.com/etsy/statsd
 statsd_git_version: master
 # statsd_git_update
 
-statsd_install_method: git
+statsd_install_method: npm
 
 statsd_npm_name: statsd
 
